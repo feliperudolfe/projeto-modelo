@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+
+	<datasource jta="true" jndi-name="java:jboss/datasources/modelo-ds" pool-name="modelo_ds" enabled="true" use-java-context="true" use-ccm="true">
+		<connection-url>jdbc:mysql://banco:3306/modelo?useSSL=false</connection-url>
+		<driver-class>com.mysql.jdbc.Driver</driver-class>
+		<driver>com.mysql</driver>
+		<transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+		<pool>
+			<min-pool-size>10</min-pool-size>
+			<max-pool-size>100</max-pool-size>
+			<prefill>true</prefill>
+		</pool>
+		<security>
+			<user-name>user</user-name>
+			<password>pass</password>
+		</security>
+		<validation>
+            <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
+            <validate-on-match>false</validate-on-match>
+            <background-validation>false</background-validation>
+            <use-fast-fail>true</use-fast-fail>
+        </validation>
+	</datasource>
+
+</datasources>
