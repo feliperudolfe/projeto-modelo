@@ -8,7 +8,7 @@
 
 # **2. Executando o projeto:**
 
-## **2.1 EXECUTAR PROJETO COM WILDFLY:**
+## **2.1. Executar projeto com Wildfly:**
 
 ### **Passos:**
 1. Baixe o Wildfly 10.1.0.Final através do link http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.zip;
@@ -20,7 +20,7 @@
 7. Navegar no cmd até pasta 'raiz/bin' e execute comnando standalone.sh -b 0.0.0.0;
 8. Abra o browser e informe a URL localhost:8080/modelo;
 
-## **2.1 EXECUTAR PROJETO COM DOCKER:**
+## **2.2. Executar projeto com Docker:**
 
 ### **Passos:**
 1. Baixe e instale o Docker;
