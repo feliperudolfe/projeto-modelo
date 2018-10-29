@@ -2,8 +2,8 @@ package br.com.feliperudolfe.repositorio.dao.implementacao;
 
 import javax.ejb.Stateless;
 
-import br.com.feliperudolfe.modelo.comum.repositorio.DAOGenerico;
-import br.com.feliperudolfe.modelo.modelo.entidade.Perfil;
+import br.com.feliperudolfe.comum.repositorio.DAOGenerico;
+import br.com.feliperudolfe.modelo.entidade.Perfil;
 import br.com.feliperudolfe.repositorio.dao.PerfilDAO;
 
 /**

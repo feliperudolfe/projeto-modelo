@@ -2,8 +2,8 @@ package br.com.feliperudolfe.repositorio.dao;
 
 import javax.ejb.Local;
 
-import br.com.feliperudolfe.modelo.comum.repositorio.DAO;
-import br.com.feliperudolfe.modelo.modelo.entidade.Usuario;
+import br.com.feliperudolfe.comum.repositorio.DAO;
+import br.com.feliperudolfe.modelo.entidade.Usuario;
 
 /**
  * @author Felipe Rudolfe

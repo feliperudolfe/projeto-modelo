@@ -4,12 +4,13 @@ import java.util.List;
 
 import javax.ejb.EJB;
 
-import br.com.feliperudolfe.modelo.comum.configuracao.Msg;
-import br.com.feliperudolfe.modelo.comum.configuracao.MsgRef;
-import br.com.feliperudolfe.modelo.comum.modelo.dto.Mensagem;
-import br.com.feliperudolfe.modelo.comum.tratamento.NegocioException;
-import br.com.feliperudolfe.modelo.modelo.entidade.Perfil;
-import br.com.feliperudolfe.modelo.modelo.entidade.Usuario;
+import br.com.feliperudolfe.comum.configuracao.Msg;
+import br.com.feliperudolfe.comum.configuracao.MsgRef;
+import br.com.feliperudolfe.comum.modelo.dto.Mensagem;
+import br.com.feliperudolfe.comum.tratamento.NegocioException;
+import br.com.feliperudolfe.modelo.entidade.Perfil;
+import br.com.feliperudolfe.modelo.entidade.Usuario;
+import br.com.feliperudolfe.negocio.service.UsuarioService;
 import br.com.feliperudolfe.repositorio.dao.PerfilDAO;
 import br.com.feliperudolfe.repositorio.dao.PermissaoDAO;
 import br.com.feliperudolfe.repositorio.dao.UsuarioDAO;

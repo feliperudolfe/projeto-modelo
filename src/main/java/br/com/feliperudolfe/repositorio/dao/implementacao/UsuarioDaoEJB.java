@@ -3,8 +3,8 @@ package br.com.feliperudolfe.repositorio.dao.implementacao;
 import javax.ejb.Stateless;
 import javax.persistence.Query;
 
-import br.com.feliperudolfe.modelo.comum.repositorio.DAOGenerico;
-import br.com.feliperudolfe.modelo.modelo.entidade.Usuario;
+import br.com.feliperudolfe.comum.repositorio.DAOGenerico;
+import br.com.feliperudolfe.modelo.entidade.Usuario;
 import br.com.feliperudolfe.repositorio.dao.UsuarioDAO;
 import br.com.feliperudolfe.repositorio.query.UsuarioQuery;
 
