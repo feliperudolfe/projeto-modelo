@@ -57,7 +57,7 @@ public class ApplicationSecurityContext implements SecurityContext {
 	}// getAuthenticationScheme()
 
 	private List<Permissao> getPermissoes() {
-		return (user.getPerfil() == null) ? null : user.getPerfil().getPermissoes();
+		return (this.user.getPerfil() == null) ? null : this.user.getPerfil().getPermissoes();
 	}// getPermissoes()
 
 }

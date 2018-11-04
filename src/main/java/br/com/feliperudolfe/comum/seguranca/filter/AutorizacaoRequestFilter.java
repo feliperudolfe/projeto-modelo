@@ -26,7 +26,7 @@ public class AutorizacaoRequestFilter extends AbstractFilter implements Containe
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 
 		Method metodo = getMetodoInvocado(requestContext);
-		if (isRequerAutorizacao(metodo)) {
+		if (isRequerAutenticacao(metodo)) {
 
 			SecurityContext context = requestContext.getSecurityContext();
 			if (context != null && context.getUserPrincipal() != null) {

@@ -45,7 +45,8 @@ public abstract class AbstractFilter extends ResponseMapper {
 	protected String getAuthToken(ContainerRequestContext requestContext) {
 
 		String retorno = null;
-		if (requestContext.getHeaderString(AUTHORRIZATION_HEADER_KEY) != null && !requestContext.getHeaderString(AUTHORRIZATION_HEADER_KEY).isEmpty()) {
+		if (requestContext.getHeaderString(AUTHORRIZATION_HEADER_KEY) != null
+				&& !requestContext.getHeaderString(AUTHORRIZATION_HEADER_KEY).isEmpty()) {
 			retorno = requestContext.getHeaderString(AUTHORRIZATION_HEADER_KEY);
 		} // if
 
@@ -66,7 +67,7 @@ public abstract class AbstractFilter extends ResponseMapper {
 			final String senha = tokenizer.nextToken();
 
 			usuario = this.usuarioService.buscarPorLoginAndPass(login, senha);
-		}// if
+		} // if
 
 		return usuario;
 	}// obterUsuarioAutenticado()
@@ -81,16 +82,29 @@ public abstract class AbstractFilter extends ResponseMapper {
 	}// abortarRequest()
 
 	protected Boolean isRequerAutenticacao(Method metodo) {
+		return isMetodoRequerAutenticacao(metodo) | isClasseMetodoRequerAutenticacao(metodo);
+	}// isMetodoRequerAutenticacao()
+
+	protected Boolean isMetodoRequerAutenticacao(Method metodo) {
 		return metodo.isAnnotationPresent(Autenticacao.class);
-	}// isRequerAutenticacao()
+	}// isMetodoRequerAutenticacao()
+
+	protected Boolean isClasseMetodoRequerAutenticacao(Method metodo) {
+		return metodo.getDeclaringClass().isAnnotationPresent(Autenticacao.class);
+	}// isClasseMetodoRequerAutenticacao()
 
 	protected Autorizacao getAutorizacao(Method metodo) {
-		return metodo.getAnnotation(Autorizacao.class);
+		Autorizacao retorno = metodo.getAnnotation(Autorizacao.class);
+		if (retorno == null) {
+			retorno = getAutorizacao(metodo.getDeclaringClass());
+		}// if
+
+		return retorno;
 	}// getAutorizacao()
 
-	protected Boolean isRequerAutorizacao(Method metodo) {
-		return metodo.isAnnotationPresent(Autorizacao.class);
-	}// isRequerAutorizacao()
+	protected Autorizacao getAutorizacao(Class<?> classe) {
+		return (Autorizacao) classe.getAnnotation(Autorizacao.class);
+	}// getAutorizacao()
 
 	protected Method getMetodoInvocado(ContainerRequestContext requestContext) {
 		return ((ResourceMethodInvoker) requestContext.getProperty(METODO_INVOCADO)).getMethod();

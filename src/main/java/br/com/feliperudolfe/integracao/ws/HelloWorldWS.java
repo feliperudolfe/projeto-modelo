@@ -14,6 +14,7 @@ import br.com.feliperudolfe.comum.seguranca.anotacao.Autorizacao;
  * @author Felipe Rudolfe
  *
  */
+@Autenticacao
 @Path(value = "/hello-world")
 public class HelloWorldWS extends WebService {
 
